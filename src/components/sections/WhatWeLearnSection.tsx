@@ -2,39 +2,19 @@ import { useState } from "react";
 import { BookOpen, Zap, Layers } from "lucide-react";
 import SectionHeading from "../common/SectionHeading";
 import Typewriter from "../common/Typewriter";
+import { siteConfig } from "../../config/site.config";
 
-const terminalContent = [
-  {
-    user: "어제 회의록 파일들 전부 읽고, 결정된 사항이랑 오늘 할 일만 뽑아서 markdown으로 정리해줘.",
-    claude: [
-      "네, 회의록을 분석하여 요약하겠습니다.",
-      "Reading files...",
-      "회의록 요약이 완료되었습니다. 결정 사항과 할 일을 markdown 파일로 저장했습니다.",
-    ],
-  },
-  {
-    user: "이번 주 주간 보고서 데이터를 분석해서 요약해줘.",
-    claude: [
-      "네, 주간 보고서 데이터를 분석하겠습니다.",
-      "Analyzing data...",
-      "분석이 완료되었습니다. 주요 지표 변화와 인사이트를 요약했습니다.",
-    ],
-  },
-  {
-    user: "매주 월요일마다 팀원들 주간보고를 수집해서, 부서별로 묶고 요약본을 만들어주는 자동화를 세팅해줘.",
-    claude: [
-      "네, 주간보고 자동화 파이프라인을 구성하겠습니다.",
-      "Creating automation script...",
-      "완료했습니다. 매주 월요일 팀원 보고서를 수집 → 부서별 분류 → 요약본 생성까지 자동 실행됩니다.",
-    ],
-  },
-];
+const ICON_MAP = { BookOpen, Zap, Layers };
 
-const tabs = [
-  { title: "회의록 → 자동 요약", icon: <BookOpen size={18} /> },
-  { title: "데이터 → 분석 리포트", icon: <Zap size={18} /> },
-  { title: "반복 업무 → 자동화", icon: <Layers size={18} /> },
-];
+const terminalContent = siteConfig.whatWeLearn.tabs.map((tab) => ({
+  user: tab.user,
+  claude: tab.claude,
+}));
+
+const tabs = siteConfig.whatWeLearn.tabs.map((tab) => {
+  const Icon = ICON_MAP[tab.icon as keyof typeof ICON_MAP];
+  return { title: tab.title, icon: <Icon size={18} /> };
+});
 
 export default function WhatWeLearnSection() {
   const [activeTab, setActiveTab] = useState(0);
@@ -45,22 +25,27 @@ export default function WhatWeLearnSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <SectionHeading subtitle="What We Learn">
-              우리가 배우는 건<br />
-              코딩이 아닙니다
+              {siteConfig.whatWeLearn.heading.split("\n").map((line, i, arr) => (
+                <span key={i}>
+                  {line}
+                  {i < arr.length - 1 && <br />}
+                </span>
+              ))}
             </SectionHeading>
             <div className="space-y-6 mb-12">
-              <p className="text-xl text-zinc-400 leading-relaxed">
-                AI가{" "}
-                <strong className="text-orange-500 font-bold">
-                  내 생각대로
-                </strong>{" "}
-                계획을 세우고, 자료를 분석하고, 일할 수 있도록 시스템을 만드는
-                법을 배웁니다.
-              </p>
-              <p className="text-xl text-zinc-400 leading-relaxed">
-                코드를 직접 작성하는 게 아닙니다. 한국어로 원하는 걸 말하면,
-                Claude Code가 계획을 세우고 실행합니다.
-              </p>
+              {siteConfig.whatWeLearn.intro.map((paragraph, i) => (
+                <p key={i} className="text-xl text-zinc-400 leading-relaxed">
+                  {paragraph.split(/(\*\*[^*]+\*\*)/).map((part, j) =>
+                    part.startsWith("**") && part.endsWith("**") ? (
+                      <strong key={j} className="text-orange-500 font-bold">
+                        {part.slice(2, -2)}
+                      </strong>
+                    ) : (
+                      part
+                    )
+                  )}
+                </p>
+              ))}
             </div>
 
             <div className="flex flex-col gap-3">
