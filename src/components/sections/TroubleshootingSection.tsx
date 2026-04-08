@@ -1,5 +1,6 @@
 import { AlertCircle, Play } from "lucide-react";
 import { OS_KEYS, type OsType } from "../../constants/os";
+import { siteConfig } from "../../config/site.config";
 
 export default function TroubleshootingSection({ os }: { os: OsType }) {
   const keys = OS_KEYS[os];
@@ -23,7 +24,7 @@ export default function TroubleshootingSection({ os }: { os: OsType }) {
               <li>
                 File → Open Folder →{" "}
                 <code className="text-orange-300 bg-orange-500/10 px-1.5 py-0.5 rounded">
-                  exem-claude-code-class
+                  {siteConfig.site.folderName}
                 </code>
               </li>
               <li>
