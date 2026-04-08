@@ -1,42 +1,12 @@
 import { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 import SectionHeading from "../common/SectionHeading";
+import { siteConfig } from "../../config/site.config";
 
-const curriculum = [
-  {
-    day: 1,
-    title: "기본기 마스터",
-    desc: "Claude Code와 인사하고, 첫 번째 자동화 스크립트를 만들어봅니다.",
-    topics: ["AI에게 잘 시키는 법", "왜 Claude인가", "첫 번째 자동화 스크립트"],
-  },
-  {
-    day: 2,
-    title: "파일 다루기",
-    desc: "여러 파일을 동시에 수정하고, 프로젝트 구조를 이해하는 방법을 배웁니다.",
-    topics: ["프로젝트 구조 파악", "다중 파일 동시 수정", "코드 리팩토링 기초"],
-  },
-  {
-    day: 3,
-    title: "도구 연결하기",
-    desc: "MCP를 활용해 외부 도구(Slack, Notion 등)와 연동하는 방법을 익힙니다.",
-    topics: ["MCP 개념 이해", "외부 API 연동", "데이터 가져오기 및 가공"],
-  },
-  {
-    day: 4,
-    title: "나만의 Skill",
-    desc: "자주 쓰는 명령어를 커스텀 Skill로 만들어 업무 효율을 극대화합니다.",
-    topics: ["커스텀 Skill 제작", "반복 업무 자동화", "나만의 명령어 세팅"],
-  },
-  {
-    day: 5,
-    title: "실전 프로젝트",
-    desc: "배운 내용을 종합하여 나만의 자동화 파이프라인을 완성합니다.",
-    topics: ["실전 파이프라인 구축", "에러 핸들링", "과정 수료 및 졸업"],
-  },
-];
+const curriculum = siteConfig.curriculum.days;
 
 export default function CurriculumSection() {
-  const [activeDay, setActiveDay] = useState(1);
+  const [activeDay, setActiveDay] = useState<number>(curriculum[0]?.day ?? 1);
 
   return (
     <section
@@ -45,8 +15,12 @@ export default function CurriculumSection() {
     >
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeading subtitle="Curriculum">
-          하루 1시간씩,
-          <br />딱 5일이면 충분합니다
+          {siteConfig.curriculum.heading.split("\n").map((line, i, arr) => (
+            <span key={i}>
+              {line}
+              {i < arr.length - 1 && <br />}
+            </span>
+          ))}
         </SectionHeading>
 
         <div className="flex flex-col md:flex-row gap-4 h-[500px]">
