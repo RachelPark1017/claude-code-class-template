@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Sun, Moon, Sparkles } from "lucide-react";
 import UnicornEmbed from "../common/UnicornEmbed";
+import { siteConfig } from "../../config/site.config";
 
 export default function HeroSection({
   isDarkMode,
@@ -68,24 +69,20 @@ export default function HeroSection({
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-sm font-medium mb-8">
             <Sparkles size={14} />
-            <span>Exem Claude Code Class</span>
+            <span>{siteConfig.hero.badge}</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white leading-[1.1] mb-8">
-            '나중에 해야지' 했던 <br />
+            {siteConfig.hero.titleBefore} <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-400 to-amber-200">
-              Claude Code,
+              {siteConfig.hero.titleHighlight}
             </span>
             <br />
-            지금이 기회입니다.
+            {siteConfig.hero.titleAfter}
           </h1>
 
-          <p className="text-xl md:text-2xl text-white font-medium leading-relaxed max-w-2xl mx-auto">
-            바빠서 미루게 되는 Claude Code, <br />
-            지금 같이 해봅시다.
-            <br />
-            앱에서 채팅하던 때와는 차원이 다른 <br />
-            결과물, 자동화가 실제로 가능해집니다.
+          <p className="text-xl md:text-2xl text-white font-medium leading-relaxed max-w-2xl mx-auto whitespace-pre-line">
+            {siteConfig.hero.subtitle}
           </p>
         </motion.div>
       </div>
