@@ -4,15 +4,15 @@
 
 export const siteConfig = {
   site: {
-    name: "Exem Claude Code Class",
-    title: "Exem Claude Code Class",
-    description: "Claude Code 교육용 랜딩 페이지",
-    folderName: "exem-claude-code-class",
+    name: "Claude Code Class",
+    title: "Claude Code Class",
+    description: "하루 1시간, 5일 Claude Code 클래스",
+    folderName: "claude-code-class",
     gitCloneUrl: "",
   },
 
   hero: {
-    badge: "Exem Claude Code Class",
+    badge: "Claude Code Class",
     titleBefore: "'나중에 해야지' 했던",
     titleHighlight: "Claude Code,",
     titleAfter: "지금이 기회입니다.",
@@ -20,17 +20,17 @@ export const siteConfig = {
   },
 
   whyNow: {
-    heading: "왜 지금이 엑셈에서 Claude Code를\n활용하기 최적의 타이밍인가?",
+    heading: "왜 지금이 Claude Code를\n시작하기 좋은 타이밍인가?",
     items: [
       {
         icon: "Cpu",
-        title: "매일 기술을 만드는 사람들",
-        desc: "2001년부터 DB, APM, 인프라 모니터링 소프트웨어를 직접 만들어 온 기술 기업. 새로운 도구를 가장 빠르게 익힐 수 있는 DNA를 가지고 있습니다.",
+        title: "AI가 일하는 방식이 바뀌고 있습니다",
+        desc: "ChatGPT 채팅을 넘어, AI가 파일을 만들고 도구를 연결하고 자동화까지 하는 시대. 이전과는 차원이 다른 생산성을 만들 수 있습니다.",
       },
       {
         icon: "Layers",
-        title: "앱 채팅을 넘어서는 시점",
-        desc: "ChatGPT, Claude 앱 — 많은 분들이 써봤죠. 하지만 파일을 직접 만들고, 도구를 연결하고, 자동화까지 하는 건 다른 차원의 이야기입니다.",
+        title: "코딩을 몰라도 됩니다",
+        desc: "한국어로 원하는 걸 말하면 됩니다. AI가 계획을 세우고, 코드를 작성하고, 실행합니다. 우리는 결과를 확인하고 방향을 조정할 뿐입니다.",
       },
       {
         icon: "Clock",
@@ -148,22 +148,22 @@ export const siteConfig = {
       },
       {
         q: "중간에 막히면 어떻게 하나요?",
-        a: "에러 메시지를 그대로 복사해서 Claude에게 물어보면 대부분 해결 방법을 알려줍니다. 그래도 해결이 어렵다면 조현서 그룹장에게 문의하시거나 추가 팁 블로그를 참고해주세요.",
+        a: "에러 메시지를 그대로 복사해서 Claude에게 물어보면 대부분 해결 방법을 알려줍니다. 그래도 해결이 어렵다면 아래 추천 레퍼런스를 참고해주세요.",
       },
       {
         q: "Windows 환경에서도 똑같이 되나요?",
         a: "네, 가능합니다. 다만 터미널 환경이 조금 다를 수 있어, 본 페이지의 '간단한 사전 세팅'에서 Windows 탭을 선택하여 안내된 주의사항을 꼭 확인해주세요.",
       },
     ],
-    contactPerson: "조현서 그룹장",
+    contactPerson: "담당자",
   },
 
   footer: {
-    headline: "엑셈의 내일은,\n오늘 시작됩니다.",
+    headline: "내일은,\n오늘 시작됩니다.",
     subline: "처음은 원래 어렵고 막막합니다.\n하지만 일단 시작할 때 진짜 변화가 만들어집니다.",
     ctaText: "지금 바로 시작하기",
-    copyright: "© 2026 Exem · Claude Code AI Training",
-    contactPerson: "피드백/오류 보고 → 조현서 그룹장",
+    copyright: "© 2026 · Claude Code Class",
+    contactPerson: "",
   },
 
   reference: {
