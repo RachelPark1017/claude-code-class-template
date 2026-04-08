@@ -1,44 +1,8 @@
 import { motion } from "motion/react";
 import { ArrowLeft, ExternalLink, BookOpen } from "lucide-react";
+import { siteConfig } from "../../config/site.config";
 
-const references = [
-  {
-    title: "Anthropic 해커톤 우승자가 공유한 Claude Code 실전 팁 70가지",
-    source: "요즘IT",
-    author: "요즘 프로덕트 메이커",
-    date: "2026.02.13",
-    desc: "Anthropic 해커톤 우승자와 DevRel 팀이 공유한 Claude Code 실전 팁 70가지. 컨텍스트 관리, 태스크 분해, 프롬프트 전략까지.",
-    url: "https://yozm.wishket.com/magazine/detail/3607",
-    tags: ["실전 팁", "프롬프트", "워크플로우"],
-  },
-  {
-    title: "30가지 이상의 Claude Code 활용 팁 모음",
-    source: "PyTorch 한국 커뮤니티",
-    author: "박정환 (9bow)",
-    date: "2025.12.08",
-    desc: "환경 설정, 효과적인 소통법, 워크플로우 관리, Git/DevOps 자동화, 고급 기법까지 5개 카테고리로 정리된 Claude Code 팁 모음.",
-    url: "https://discuss.pytorch.kr/t/30-claude-code-feat-ykdojo-claude-code-tips/8368",
-    tags: ["팁 모음", "Git 자동화", "환경 설정"],
-  },
-  {
-    title: "갓대희의 작은공간 - Claude Code 시리즈",
-    source: "갓대희의 작은공간",
-    author: "갓대희",
-    date: "연재중",
-    desc: "CLAUDE.md 활용법, Anthropic Academy 가이드, 메모리 시스템, Skills 사용법 등 Claude Code 기능별 심층 가이드 시리즈.",
-    url: "https://goddaehee.tistory.com/category/AI/Claude",
-    tags: ["CLAUDE.md", "메모리", "Skills"],
-  },
-  {
-    title: "Claude Code 고수들은 이렇게 쓴다: 생산성 극대화 꿀팁 모음",
-    source: "훈스로그",
-    author: "박승훈",
-    date: "연재중",
-    desc: "Claude Code의 Command, Skill, Subagent, Hooks 등 고급 기능 활용법과 토큰 관리 노하우까지.",
-    url: "https://blog.huns.site/blog/posts/ai/claude",
-    tags: ["고급 기능", "Hooks", "토큰 관리"],
-  },
-];
+const references = siteConfig.reference.articles;
 
 export default function ReferencePage({ onBack }: { onBack: () => void }) {
   return (
@@ -64,10 +28,10 @@ export default function ReferencePage({ onBack }: { onBack: () => void }) {
             </p>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
-            추천 레퍼런스
+            {siteConfig.reference.heading}
           </h1>
           <p className="text-lg text-zinc-400 mb-16">
-            Claude Code를 더 깊이 활용하고 싶다면, 아래 자료들을 참고하세요.
+            {siteConfig.reference.subheading}
           </p>
         </motion.div>
 
