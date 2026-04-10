@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import SectionHeading from "../common/SectionHeading";
 import { OS_KEYS, type OsType } from "../../constants/os";
+import { siteConfig } from "../../config/site.config";
 
 export default function PrerequisitesSection({
   os,
@@ -108,6 +109,13 @@ export default function PrerequisitesSection({
       desc: "터미널에 claude를 입력하면 브라우저가 열리며 로그인 화면이 나타납니다.",
       code: "claude",
       tip: "✓ Pro 계정으로 로그인 후 터미널로 돌아오면 준비 완료!",
+      image: null,
+    },
+    {
+      title: "커리큘럼 시작",
+      desc: "아래 명령어 한 줄이면 교육 자료 다운로드 + Claude 실행까지 한 번에 됩니다.",
+      code: `git clone ${siteConfig.site.gitCloneUrl} && cd ${siteConfig.site.folderName} && claude`,
+      tip: "✓ Day 0 오리엔테이션이 자동으로 시작됩니다. 안내를 따라가세요!",
       image: null,
     },
   ];

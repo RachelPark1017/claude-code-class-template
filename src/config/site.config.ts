@@ -7,8 +7,8 @@ export const siteConfig = {
     name: "Claude Code Class",
     title: "Claude Code Class",
     description: "하루 1시간, 5일 Claude Code 클래스",
-    folderName: "claude-code-class",
-    gitCloneUrl: "",
+    folderName: "claude-code-curriculum-template",
+    gitCloneUrl: "https://github.com/RachelPark1017/claude-code-curriculum-template.git",
   },
 
   hero: {
